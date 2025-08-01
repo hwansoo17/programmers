@@ -2,7 +2,7 @@ function solution(bandage, health, attacks) {
     const [castingTime, healingAmountPerSec, additionalHealingAmount] = bandage
     let hp = health;
     let c = [];
-    const fightTime = attacks.reverse()[0][0];
+    const fightTime = attacks[attacks.length - 1][0]
     const timeList = [...Array(fightTime)];
     let successNum = 0
     let cancel = false
