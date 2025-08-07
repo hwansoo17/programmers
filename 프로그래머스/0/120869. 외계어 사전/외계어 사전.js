@@ -1,18 +1,19 @@
 function solution(spell, dic) {
     var answer = 2;
-    dic.forEach((a, i) => {
-        let spelling = a.split('')
-        // console.log(spelling)
-        let given = spell
-        
-        spelling.forEach((s, i) => {
-            given = given.filter((b) => b !== s)
-        })
-        if (given.length === 0) {
+    for (let i = 0; i < dic.length; i++) {
+        let dicSpell = dic[i].split('')
+        let alphabet = spell
+        for (let a = 0; a < dicSpell.length; a++) {
+            alphabet = alphabet.filter((b) => b !== dicSpell[a])
+            if (alphabet.length === 0) {
                 answer = 1
+                break;
             }
-        console.log(given)
-    })
+        }
+        if (alphabet.length === 0) {
+            break;
+        }    
+    }
     
     return answer;
 }
